@@ -34,7 +34,7 @@ public class main extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
+			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -335,47 +335,6 @@ public class main extends Activity implements B4AActivity{
             
     }
 
-
-
-public static void initializeProcessGlobals() {
-    
-    if (main.processGlobalsRun == false) {
-	    main.processGlobalsRun = true;
-		try {
-		        		
-        } catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-    }
-}
-public static boolean isAnyActivityVisible() {
-    boolean vis = false;
-vis = vis | (main.mostCurrent != null);
-return vis;}
-
-private static BA killProgramHelper(BA ba) {
-    if (ba == null)
-        return null;
-    anywheresoftware.b4a.BA.SharedProcessBA sharedProcessBA = ba.sharedProcessBA;
-    if (sharedProcessBA == null || sharedProcessBA.activityBA == null)
-        return null;
-    return sharedProcessBA.activityBA.get();
-}
-public static void killProgram() {
-     {
-            Activity __a = null;
-            if (main.previousOne != null) {
-				__a = main.previousOne.get();
-			}
-            else {
-                BA ba = killProgramHelper(main.mostCurrent == null ? null : main.mostCurrent.processBA);
-                if (ba != null) __a = ba.activity;
-            }
-            if (__a != null)
-				__a.finish();}
-
-BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
-}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public static anywheresoftware.b4a.objects.B4XViewWrapper.XUI _xui = null;
 public static b4a.example.productos _prods = null;
@@ -385,183 +344,157 @@ public anywheresoftware.b4a.objects.EditTextWrapper _txtpreciounitario = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _txtstock = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _txtiva = null;
 public b4a.example.starter _starter = null;
+
+public static boolean isAnyActivityVisible() {
+    boolean vis = false;
+vis = vis | (main.mostCurrent != null);
+return vis;}
 public static String  _activity_create(boolean _firsttime) throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
-RDebugUtils.currentLine=131072;
- //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
-RDebugUtils.currentLine=131073;
- //BA.debugLineNum = 131073;BA.debugLine="Activity.LoadLayout(\"Layout\")";
+ //BA.debugLineNum = 31;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+ //BA.debugLineNum = 32;BA.debugLine="Activity.LoadLayout(\"Layout\")";
 mostCurrent._activity.LoadLayout("Layout",mostCurrent.activityBA);
-RDebugUtils.currentLine=131074;
- //BA.debugLineNum = 131074;BA.debugLine="prods.Initialize";
-_prods._initialize /*String*/ (null,processBA);
-RDebugUtils.currentLine=131075;
- //BA.debugLineNum = 131075;BA.debugLine="End Sub";
+ //BA.debugLineNum = 33;BA.debugLine="prods.Initialize";
+_prods._initialize /*String*/ (processBA);
+ //BA.debugLineNum = 34;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
-RDebugUtils.currentModule="main";
-RDebugUtils.currentLine=262144;
- //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-RDebugUtils.currentLine=262146;
- //BA.debugLineNum = 262146;BA.debugLine="End Sub";
+ //BA.debugLineNum = 40;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+ //BA.debugLineNum = 42;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_resume() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
-RDebugUtils.currentLine=196608;
- //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
-RDebugUtils.currentLine=196610;
- //BA.debugLineNum = 196610;BA.debugLine="End Sub";
+ //BA.debugLineNum = 36;BA.debugLine="Sub Activity_Resume";
+ //BA.debugLineNum = 38;BA.debugLine="End Sub";
 return "";
 }
 public static String  _button1_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "button1_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "button1_click", null));}
-RDebugUtils.currentLine=327680;
- //BA.debugLineNum = 327680;BA.debugLine="Sub Button1_Click";
-RDebugUtils.currentLine=327714;
- //BA.debugLineNum = 327714;BA.debugLine="xui.MsgboxAsync(\"Hello world!\", \"B4X\")";
+ //BA.debugLineNum = 44;BA.debugLine="Sub Button1_Click";
+ //BA.debugLineNum = 78;BA.debugLine="xui.MsgboxAsync(\"Hello world!\", \"B4X\")";
 _xui.MsgboxAsync(processBA,BA.ObjectToCharSequence("Hello world!"),BA.ObjectToCharSequence("B4X"));
-RDebugUtils.currentLine=327715;
- //BA.debugLineNum = 327715;BA.debugLine="End Sub";
+ //BA.debugLineNum = 79;BA.debugLine="End Sub";
 return "";
 }
 public static String  _cmdactualziar_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "cmdactualziar_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "cmdactualziar_click", null));}
 b4a.example.producto _p = null;
-RDebugUtils.currentLine=1507328;
- //BA.debugLineNum = 1507328;BA.debugLine="Private Sub cmdActualziar_Click";
-RDebugUtils.currentLine=1507329;
- //BA.debugLineNum = 1507329;BA.debugLine="Dim p As Producto = prods.Update(txtId.Text, txtN";
-_p = _prods._update /*b4a.example.producto*/ (null,(int)(Double.parseDouble(mostCurrent._txtid.getText())),mostCurrent._txtnombre.getText(),(double)(Double.parseDouble(mostCurrent._txtpreciounitario.getText())),(double)(Double.parseDouble(mostCurrent._txtstock.getText())),(double)(Double.parseDouble(mostCurrent._txtiva.getText())));
-RDebugUtils.currentLine=1507330;
- //BA.debugLineNum = 1507330;BA.debugLine="If p <> Null Then";
+ //BA.debugLineNum = 110;BA.debugLine="Private Sub cmdActualziar_Click";
+ //BA.debugLineNum = 111;BA.debugLine="Dim p As Producto = prods.Update(txtId.Text, txtN";
+_p = _prods._update /*b4a.example.producto*/ ((int)(Double.parseDouble(mostCurrent._txtid.getText())),mostCurrent._txtnombre.getText(),(double)(Double.parseDouble(mostCurrent._txtpreciounitario.getText())),(double)(Double.parseDouble(mostCurrent._txtstock.getText())),(double)(Double.parseDouble(mostCurrent._txtiva.getText())));
+ //BA.debugLineNum = 112;BA.debugLine="If p <> Null Then";
 if (_p!= null) { 
-RDebugUtils.currentLine=1507331;
- //BA.debugLineNum = 1507331;BA.debugLine="Msgbox(\"REGISTRO ACTUALZIADO OK\",\"\")";
+ //BA.debugLineNum = 113;BA.debugLine="Msgbox(\"REGISTRO ACTUALZIADO OK\",\"\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("REGISTRO ACTUALZIADO OK"),BA.ObjectToCharSequence(""),mostCurrent.activityBA);
  }else {
-RDebugUtils.currentLine=1507333;
- //BA.debugLineNum = 1507333;BA.debugLine="Msgbox(\"ERROR EN ACTUALZIACION\",\"\")";
+ //BA.debugLineNum = 115;BA.debugLine="Msgbox(\"ERROR EN ACTUALZIACION\",\"\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("ERROR EN ACTUALZIACION"),BA.ObjectToCharSequence(""),mostCurrent.activityBA);
  };
-RDebugUtils.currentLine=1507335;
- //BA.debugLineNum = 1507335;BA.debugLine="End Sub";
+ //BA.debugLineNum = 117;BA.debugLine="End Sub";
 return "";
 }
 public static String  _cmdborrar_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "cmdborrar_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "cmdborrar_click", null));}
-RDebugUtils.currentLine=1376256;
- //BA.debugLineNum = 1376256;BA.debugLine="Private Sub cmdBorrar_Click";
-RDebugUtils.currentLine=1376257;
- //BA.debugLineNum = 1376257;BA.debugLine="If prods.Delete(txtId.Text) Then";
-if (_prods._delete /*boolean*/ (null,(int)(Double.parseDouble(mostCurrent._txtid.getText())))) { 
-RDebugUtils.currentLine=1376258;
- //BA.debugLineNum = 1376258;BA.debugLine="Msgbox(\"REGISTRO BORRADO OK\",\"\")";
+ //BA.debugLineNum = 81;BA.debugLine="Private Sub cmdBorrar_Click";
+ //BA.debugLineNum = 82;BA.debugLine="If prods.Delete(txtId.Text) Then";
+if (_prods._delete /*boolean*/ ((int)(Double.parseDouble(mostCurrent._txtid.getText())))) { 
+ //BA.debugLineNum = 83;BA.debugLine="Msgbox(\"REGISTRO BORRADO OK\",\"\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("REGISTRO BORRADO OK"),BA.ObjectToCharSequence(""),mostCurrent.activityBA);
-RDebugUtils.currentLine=1376259;
- //BA.debugLineNum = 1376259;BA.debugLine="txtNombre.Text = \"\"";
+ //BA.debugLineNum = 84;BA.debugLine="txtNombre.Text = \"\"";
 mostCurrent._txtnombre.setText(BA.ObjectToCharSequence(""));
-RDebugUtils.currentLine=1376260;
- //BA.debugLineNum = 1376260;BA.debugLine="txtPrecioUnitario.Text = \"\"";
+ //BA.debugLineNum = 85;BA.debugLine="txtPrecioUnitario.Text = \"\"";
 mostCurrent._txtpreciounitario.setText(BA.ObjectToCharSequence(""));
-RDebugUtils.currentLine=1376261;
- //BA.debugLineNum = 1376261;BA.debugLine="txtStock.Text = \"\"";
+ //BA.debugLineNum = 86;BA.debugLine="txtStock.Text = \"\"";
 mostCurrent._txtstock.setText(BA.ObjectToCharSequence(""));
-RDebugUtils.currentLine=1376262;
- //BA.debugLineNum = 1376262;BA.debugLine="txtIVA.Text = \"\"";
+ //BA.debugLineNum = 87;BA.debugLine="txtIVA.Text = \"\"";
 mostCurrent._txtiva.setText(BA.ObjectToCharSequence(""));
  }else {
-RDebugUtils.currentLine=1376264;
- //BA.debugLineNum = 1376264;BA.debugLine="Msgbox(\"ERROR AL BOORAR REGISTRO\",\"\")";
+ //BA.debugLineNum = 89;BA.debugLine="Msgbox(\"ERROR AL BOORAR REGISTRO\",\"\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("ERROR AL BOORAR REGISTRO"),BA.ObjectToCharSequence(""),mostCurrent.activityBA);
  };
-RDebugUtils.currentLine=1376266;
- //BA.debugLineNum = 1376266;BA.debugLine="End Sub";
+ //BA.debugLineNum = 91;BA.debugLine="End Sub";
 return "";
 }
 public static String  _cmdcrear_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "cmdcrear_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "cmdcrear_click", null));}
 b4a.example.producto _p = null;
-RDebugUtils.currentLine=1572864;
- //BA.debugLineNum = 1572864;BA.debugLine="Private Sub cmdCrear_Click";
-RDebugUtils.currentLine=1572865;
- //BA.debugLineNum = 1572865;BA.debugLine="Dim p As Producto = prods.Create( txtId.Text, txt";
-_p = _prods._create /*b4a.example.producto*/ (null,(int)(Double.parseDouble(mostCurrent._txtid.getText())),mostCurrent._txtnombre.getText(),(double)(Double.parseDouble(mostCurrent._txtpreciounitario.getText())),(double)(Double.parseDouble(mostCurrent._txtstock.getText())),(double)(Double.parseDouble(mostCurrent._txtiva.getText())));
-RDebugUtils.currentLine=1572866;
- //BA.debugLineNum = 1572866;BA.debugLine="If p <> Null Then";
+ //BA.debugLineNum = 119;BA.debugLine="Private Sub cmdCrear_Click";
+ //BA.debugLineNum = 120;BA.debugLine="Dim p As Producto = prods.Create( txtId.Text, txt";
+_p = _prods._create /*b4a.example.producto*/ ((int)(Double.parseDouble(mostCurrent._txtid.getText())),mostCurrent._txtnombre.getText(),(double)(Double.parseDouble(mostCurrent._txtpreciounitario.getText())),(double)(Double.parseDouble(mostCurrent._txtstock.getText())),(double)(Double.parseDouble(mostCurrent._txtiva.getText())));
+ //BA.debugLineNum = 121;BA.debugLine="If p <> Null Then";
 if (_p!= null) { 
-RDebugUtils.currentLine=1572867;
- //BA.debugLineNum = 1572867;BA.debugLine="Msgbox(\"REGISTRO CREADO OK\",\"\")";
+ //BA.debugLineNum = 122;BA.debugLine="Msgbox(\"REGISTRO CREADO OK\",\"\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("REGISTRO CREADO OK"),BA.ObjectToCharSequence(""),mostCurrent.activityBA);
  }else {
-RDebugUtils.currentLine=1572869;
- //BA.debugLineNum = 1572869;BA.debugLine="Msgbox(\"ERROR EN CREACION\",\"\")";
+ //BA.debugLineNum = 124;BA.debugLine="Msgbox(\"ERROR EN CREACION\",\"\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("ERROR EN CREACION"),BA.ObjectToCharSequence(""),mostCurrent.activityBA);
  };
-RDebugUtils.currentLine=1572871;
- //BA.debugLineNum = 1572871;BA.debugLine="End Sub";
+ //BA.debugLineNum = 126;BA.debugLine="End Sub";
 return "";
 }
 public static String  _cmdleeruno_click() throws Exception{
-RDebugUtils.currentModule="main";
-if (Debug.shouldDelegate(mostCurrent.activityBA, "cmdleeruno_click", false))
-	 {return ((String) Debug.delegate(mostCurrent.activityBA, "cmdleeruno_click", null));}
 b4a.example.producto _p = null;
-RDebugUtils.currentLine=1441792;
- //BA.debugLineNum = 1441792;BA.debugLine="Private Sub cmdLeerUno_Click";
-RDebugUtils.currentLine=1441793;
- //BA.debugLineNum = 1441793;BA.debugLine="Dim p As Producto = prods.Read_ById(txtId.Text)";
-_p = _prods._read_byid /*b4a.example.producto*/ (null,(int)(Double.parseDouble(mostCurrent._txtid.getText())));
-RDebugUtils.currentLine=1441794;
- //BA.debugLineNum = 1441794;BA.debugLine="If p <> Null Then";
+ //BA.debugLineNum = 93;BA.debugLine="Private Sub cmdLeerUno_Click";
+ //BA.debugLineNum = 94;BA.debugLine="Dim p As Producto = prods.Read_ById(txtId.Text)";
+_p = _prods._read_byid /*b4a.example.producto*/ ((int)(Double.parseDouble(mostCurrent._txtid.getText())));
+ //BA.debugLineNum = 95;BA.debugLine="If p <> Null Then";
 if (_p!= null) { 
-RDebugUtils.currentLine=1441795;
- //BA.debugLineNum = 1441795;BA.debugLine="txtId.Text = p.Id";
+ //BA.debugLineNum = 96;BA.debugLine="txtId.Text = p.Id";
 mostCurrent._txtid.setText(BA.ObjectToCharSequence(_p._id /*int*/ ));
-RDebugUtils.currentLine=1441796;
- //BA.debugLineNum = 1441796;BA.debugLine="txtNombre.Text = p.Nombre";
+ //BA.debugLineNum = 97;BA.debugLine="txtNombre.Text = p.Nombre";
 mostCurrent._txtnombre.setText(BA.ObjectToCharSequence(_p._nombre /*String*/ ));
-RDebugUtils.currentLine=1441797;
- //BA.debugLineNum = 1441797;BA.debugLine="txtPrecioUnitario.Text = p.PrecioUnitario";
+ //BA.debugLineNum = 98;BA.debugLine="txtPrecioUnitario.Text = p.PrecioUnitario";
 mostCurrent._txtpreciounitario.setText(BA.ObjectToCharSequence(_p._preciounitario /*double*/ ));
-RDebugUtils.currentLine=1441798;
- //BA.debugLineNum = 1441798;BA.debugLine="txtStock.Text = p.Stock";
+ //BA.debugLineNum = 99;BA.debugLine="txtStock.Text = p.Stock";
 mostCurrent._txtstock.setText(BA.ObjectToCharSequence(_p._stock /*double*/ ));
-RDebugUtils.currentLine=1441799;
- //BA.debugLineNum = 1441799;BA.debugLine="txtIVA.Text = p.IVA";
+ //BA.debugLineNum = 100;BA.debugLine="txtIVA.Text = p.IVA";
 mostCurrent._txtiva.setText(BA.ObjectToCharSequence(_p._iva /*double*/ ));
  }else {
-RDebugUtils.currentLine=1441801;
- //BA.debugLineNum = 1441801;BA.debugLine="txtNombre.Text = \"\"";
+ //BA.debugLineNum = 102;BA.debugLine="txtNombre.Text = \"\"";
 mostCurrent._txtnombre.setText(BA.ObjectToCharSequence(""));
-RDebugUtils.currentLine=1441802;
- //BA.debugLineNum = 1441802;BA.debugLine="txtPrecioUnitario.Text = \"\"";
+ //BA.debugLineNum = 103;BA.debugLine="txtPrecioUnitario.Text = \"\"";
 mostCurrent._txtpreciounitario.setText(BA.ObjectToCharSequence(""));
-RDebugUtils.currentLine=1441803;
- //BA.debugLineNum = 1441803;BA.debugLine="txtStock.Text = \"\"";
+ //BA.debugLineNum = 104;BA.debugLine="txtStock.Text = \"\"";
 mostCurrent._txtstock.setText(BA.ObjectToCharSequence(""));
-RDebugUtils.currentLine=1441804;
- //BA.debugLineNum = 1441804;BA.debugLine="txtIVA.Text = \"\"";
+ //BA.debugLineNum = 105;BA.debugLine="txtIVA.Text = \"\"";
 mostCurrent._txtiva.setText(BA.ObjectToCharSequence(""));
-RDebugUtils.currentLine=1441805;
- //BA.debugLineNum = 1441805;BA.debugLine="Msgbox(\"REGISTRO NO ENCONTGRADO\",\"\")";
+ //BA.debugLineNum = 106;BA.debugLine="Msgbox(\"REGISTRO NO ENCONTGRADO\",\"\")";
 anywheresoftware.b4a.keywords.Common.Msgbox(BA.ObjectToCharSequence("REGISTRO NO ENCONTGRADO"),BA.ObjectToCharSequence(""),mostCurrent.activityBA);
  };
-RDebugUtils.currentLine=1441807;
- //BA.debugLineNum = 1441807;BA.debugLine="End Sub";
+ //BA.debugLineNum = 108;BA.debugLine="End Sub";
+return "";
+}
+public static String  _globals() throws Exception{
+ //BA.debugLineNum = 22;BA.debugLine="Sub Globals";
+ //BA.debugLineNum = 24;BA.debugLine="Private txtId As EditText";
+mostCurrent._txtid = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 25;BA.debugLine="Private txtNombre As EditText";
+mostCurrent._txtnombre = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 26;BA.debugLine="Private txtPrecioUnitario As EditText";
+mostCurrent._txtpreciounitario = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 27;BA.debugLine="Private txtStock As EditText";
+mostCurrent._txtstock = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 28;BA.debugLine="Private txtIVA As EditText";
+mostCurrent._txtiva = new anywheresoftware.b4a.objects.EditTextWrapper();
+ //BA.debugLineNum = 29;BA.debugLine="End Sub";
+return "";
+}
+
+public static void initializeProcessGlobals() {
+    
+    if (main.processGlobalsRun == false) {
+	    main.processGlobalsRun = true;
+		try {
+		        main._process_globals();
+starter._process_globals();
+		
+        } catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+    }
+}public static String  _process_globals() throws Exception{
+ //BA.debugLineNum = 15;BA.debugLine="Sub Process_Globals";
+ //BA.debugLineNum = 18;BA.debugLine="Private xui As XUI";
+_xui = new anywheresoftware.b4a.objects.B4XViewWrapper.XUI();
+ //BA.debugLineNum = 19;BA.debugLine="Private prods As Productos   ' defino el objecto";
+_prods = new b4a.example.productos();
+ //BA.debugLineNum = 20;BA.debugLine="End Sub";
 return "";
 }
 }
