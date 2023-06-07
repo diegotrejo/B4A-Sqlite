@@ -57,8 +57,13 @@ public boolean isSingleton() {
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
 public static RemoteObject _xui = RemoteObject.declareNull("anywheresoftware.b4a.objects.B4XViewWrapper.XUI");
 public static RemoteObject _prods = RemoteObject.declareNull("b4a.example.productos");
+public static RemoteObject _txtid = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
+public static RemoteObject _txtnombre = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
+public static RemoteObject _txtpreciounitario = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
+public static RemoteObject _txtstock = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
+public static RemoteObject _txtiva = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
 public static b4a.example.starter _starter = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"prods",main._prods,"Starter",Debug.moduleToString(b4a.example.starter.class),"xui",main._xui};
+		return new Object[] {"Activity",main.mostCurrent._activity,"prods",main._prods,"Starter",Debug.moduleToString(b4a.example.starter.class),"txtId",main.mostCurrent._txtid,"txtIVA",main.mostCurrent._txtiva,"txtNombre",main.mostCurrent._txtnombre,"txtPrecioUnitario",main.mostCurrent._txtpreciounitario,"txtStock",main.mostCurrent._txtstock,"xui",main._xui};
 }
 }

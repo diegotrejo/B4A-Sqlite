@@ -37,6 +37,11 @@ End Sub
 
 Sub Globals
 	'These global variables will be redeclared each time the activity is created.
+	Private txtId As EditText
+	Private txtNombre As EditText
+	Private txtPrecioUnitario As EditText
+	Private txtStock As EditText
+	Private txtIVA As EditText
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
@@ -53,38 +58,85 @@ Sub Activity_Pause (UserClosed As Boolean)
 End Sub
 
 Sub Button1_Click
-	
-	Dim p As Producto = prods.Create(1, "pan", 0.12, 100, 0)
-	If p <> Null Then
-		Log("--------------<  CREATE >-----------------")
-		Log( p.nombre )
-		Log( p.PrecioUnitario )
-		Log( p.Stock )
-	End If
-	
-	p = prods.Read_ById(1)
-	If p <> Null Then
-		Log("---------------< READ BY ID 1 >----------------")
-		Log( p.nombre )
-		Log( p.PrecioUnitario )
-		Log( p.Stock )
-	End If
-	
-	p.Nombre = "pan centeno"
-	p.PrecioUnitario = 0.22
-	p = prods.Update(p.Id, p.Nombre, p.PrecioUnitario, p.Stock, p.IVA)
-	If p <> Null Then
-		Log("---------------< UPDATE >----------------")
-		Log( p.nombre )
-		Log( p.PrecioUnitario )
-		Log( p.Stock )
-	End If
-	
-	If prods.Delete(1) Then
-		Log("----- REGISTRO BORRADO OK -------")
-	Else
-		Log("----- REGISTRO NO BORRADO -------")
-	End If
-	
+'	
+'	Dim p As Producto = prods.Create(1, "pan", 0.12, 100, 0)
+'	If p <> Null Then
+'		Log("--------------<  CREATE >-----------------")
+'		Log( p.nombre )
+'		Log( p.PrecioUnitario )
+'		Log( p.Stock )
+'	End If
+'	
+'	p = prods.Read_ById(1)
+'	If p <> Null Then
+'		Log("---------------< READ BY ID 1 >----------------")
+'		Log( p.nombre )
+'		Log( p.PrecioUnitario )
+'		Log( p.Stock )
+'	End If
+'	
+'	p.Nombre = "pan centeno"
+'	p.PrecioUnitario = 0.22
+'	p = prods.Update(p.Id, p.Nombre, p.PrecioUnitario, p.Stock, p.IVA)
+'	If p <> Null Then
+'		Log("---------------< UPDATE >----------------")
+'		Log( p.nombre )
+'		Log( p.PrecioUnitario )
+'		Log( p.Stock )
+'	End If
+'	
+'	If prods.Delete(1) Then
+'		Log("----- REGISTRO BORRADO OK -------")
+'	Else
+'		Log("----- REGISTRO NO BORRADO -------")
+'	End If
+'	
 	xui.MsgboxAsync("Hello world!", "B4X")
+End Sub
+
+Private Sub cmdBorrar_Click
+	If prods.Delete(txtId.Text) Then
+		Msgbox("REGISTRO BORRADO OK","")
+		txtNombre.Text = ""
+		txtPrecioUnitario.Text = ""
+		txtStock.Text = ""
+		txtIVA.Text = ""		
+	Else
+		Msgbox("ERROR AL BOORAR REGISTRO","")
+	End If
+End Sub
+
+Private Sub cmdLeerUno_Click
+	Dim p As Producto = prods.Read_ById(txtId.Text)
+	If p <> Null Then
+		txtId.Text = p.Id
+		txtNombre.Text = p.Nombre
+		txtPrecioUnitario.Text = p.PrecioUnitario
+		txtStock.Text = p.Stock
+		txtIVA.Text = p.IVA
+	Else
+		txtNombre.Text = ""
+		txtPrecioUnitario.Text = ""
+		txtStock.Text = ""
+		txtIVA.Text = ""
+		Msgbox("REGISTRO NO ENCONTGRADO","")
+	End If
+End Sub
+
+Private Sub cmdActualziar_Click
+	Dim p As Producto = prods.Update(txtId.Text, txtNombre.Text, txtPrecioUnitario.Text, txtStock.Text, txtIVA.Text)
+	If p <> Null Then
+		Msgbox("REGISTRO ACTUALZIADO OK","")
+	Else
+		Msgbox("ERROR EN ACTUALZIACION","")
+	End If
+End Sub
+
+Private Sub cmdCrear_Click
+	Dim p As Producto = prods.Create( txtId.Text, txtNombre.Text, txtPrecioUnitario.Text, txtStock.Text, txtIVA.Text)
+	If p <> Null Then
+		Msgbox("REGISTRO CREADO OK","")
+	Else
+		Msgbox("ERROR EN CREACION","")
+	End If
 End Sub

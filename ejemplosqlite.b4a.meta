@@ -10,6 +10,6 @@ ModuleClosedNodes0=1,2
 ModuleClosedNodes1=
 ModuleClosedNodes2=
 ModuleClosedNodes3=1
-NavigationStack=Productos,Read_All,36,6,Productos,Delete,100,6,Productos,Class_Globals,0,4,Productos,Update,89,6,Productos,Read_ById,73,6,Main,Process_Globals,18,6,Main,Activity_Resume,30,0,Main,Activity_Create,28,2,Main,Activity_Pause,37,0,Main,Button1_Click,62,6
+NavigationStack=Main,Activity_Resume,30,0,Main,Activity_Create,28,2,Main,Activity_Pause,34,0,Diseñador Visual,Layout.bal,-100,2,Main,Globals,28,0,Main,cmdActualziar_Click,101,6,Main,cmdCrear_Click,119,6,Main,Button1_Click,79,6,Main,cmdLeerUno_Click,97,6,Main,cmdBorrar_Click,83,6
 SelectedBuild=0
 VisibleModules=3,1,2

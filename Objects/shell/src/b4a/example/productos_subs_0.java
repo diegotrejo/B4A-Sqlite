@@ -59,7 +59,7 @@ Debug.CheckDeviceExceptions();if (true) return _producto;
        catch (Exception e12) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e12.toString()); BA.debugLineNum = 25;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(16777216);
-productos.__c.runVoidMethod ("LogImpl","11441806",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+productos.__c.runVoidMethod ("LogImpl","71048590",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  BA.debugLineNum = 26;BA.debugLine="Return Null";
 Debug.ShouldStop(33554432);
 if (true) return (productos.__c.getField(false,"Null"));
@@ -94,7 +94,7 @@ Debug.CheckDeviceExceptions();if (true) return productos.__c.getField(true,"True
        catch (Exception e5) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e5.toString()); BA.debugLineNum = 98;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(2);
-productos.__c.runVoidMethod ("LogImpl","13145733",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+productos.__c.runVoidMethod ("LogImpl","71310725",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  BA.debugLineNum = 99;BA.debugLine="Return False";
 Debug.ShouldStop(4);
 if (true) return productos.__c.getField(true,"False");
@@ -200,7 +200,7 @@ _res.runVoidMethod ("Add",(Object)((_prod)));
        catch (Exception e18) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e18.toString()); BA.debugLineNum = 48;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(32768);
-productos.__c.runVoidMethod ("LogImpl","11966098",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+productos.__c.runVoidMethod ("LogImpl","71114130",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  };
  BA.debugLineNum = 51;BA.debugLine="Return res";
 Debug.ShouldStop(262144);
@@ -272,7 +272,7 @@ Debug.CheckDeviceExceptions();if (true) return (productos.__c.getField(false,"Nu
        catch (Exception e18) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e18.toString()); BA.debugLineNum = 72;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(128);
-productos.__c.runVoidMethod ("LogImpl","12228242",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+productos.__c.runVoidMethod ("LogImpl","71179666",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  BA.debugLineNum = 73;BA.debugLine="Return Null";
 Debug.ShouldStop(256);
 if (true) return (productos.__c.getField(false,"Null"));
@@ -333,7 +333,7 @@ Debug.CheckDeviceExceptions();if (true) return _prod;
        catch (Exception e12) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e12.toString()); BA.debugLineNum = 88;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(8388608);
-productos.__c.runVoidMethod ("LogImpl","12752523",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+productos.__c.runVoidMethod ("LogImpl","71245195",BA.ObjectToString(productos.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  BA.debugLineNum = 89;BA.debugLine="Return Null";
 Debug.ShouldStop(16777216);
 if (true) return (productos.__c.getField(false,"Null"));

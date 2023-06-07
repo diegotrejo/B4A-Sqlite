@@ -4,23 +4,39 @@ b4a.example
 producto
 productos
 0
-main,activity_create,1,0,26,29
-,prods
-
+main,activity_create,1,0,31,34
+,txtid,,txtiva,,txtnombre,,txtpreciounitario,,txtstock,,prods
+,txtid,,txtiva,,txtnombre,,txtpreciounitario,,txtstock
 productos,initialize
-main,activity_pause,0,0,35,37
+main,activity_pause,0,0,40,42
 
 
 
-main,activity_resume,0,0,31,33
+main,activity_resume,0,0,36,38
 
 
 
-main,button1_click,0,0,39,74
-,prods,,xui
+main,button1_click,0,0,44,79
+,xui
 
-productos,create,productos,read_byid,productos,update,productos,delete,producto,initialize
-main,globals,0,1,22,24
+
+main,cmdactualziar_click,1,0,110,117
+,prods,,txtid,,txtnombre,,txtpreciounitario,,txtstock,,txtiva
+
+productos,update,producto,initialize
+main,cmdborrar_click,1,0,81,91
+,prods,,txtid,,txtnombre,,txtpreciounitario,,txtstock,,txtiva
+
+productos,delete
+main,cmdcrear_click,1,0,119,126
+,prods,,txtid,,txtnombre,,txtpreciounitario,,txtstock,,txtiva
+
+productos,create,producto,initialize
+main,cmdleeruno_click,1,0,93,108
+,prods,,txtid,,txtnombre,,txtpreciounitario,,txtstock,,txtiva
+
+productos,read_byid,producto,initialize
+main,globals,0,1,22,29
 
 
 
@@ -32,14 +48,6 @@ productos,initialize,0,0,6,9
 
 
 
-productos,create,0,0,11,28
-
-
-producto,initialize
-productos,read_byid,0,0,54,75
-
-
-producto,initialize
 productos,update,0,0,77,91
 
 
@@ -48,6 +56,14 @@ productos,delete,0,0,93,101
 
 
 
+productos,create,0,0,11,28
+
+
+producto,initialize
+productos,read_byid,0,0,54,75
+
+
+producto,initialize
 productos,class_globals,0,0,1,3
 
 
